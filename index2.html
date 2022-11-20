@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+ <title> quà tặng 2 bạn nhoa</title>
+ <link rel="stylesheet" href="main.css">
+
+
+
+
+ 
+
+
+</head>
+<body>
+<div class="al">
+<center>
+<div id="new"><strong><span>H</span><span>a</span><span>p</span>p<span>y </span><span>A</span><span>n</span><span>i</span><span>v</span><span>e</span><span>r</span><span>s</span><span>a</span><span>r</span><span>y</span><span>!</span></center></strong></div>
+<div id="iloveyou"></div><br>
+<marquee> 💖 💖 💖MONG 2 BẠN HẠNH PHÚC BÊN NHAU TỚI GIÀ  💖 💖 💖<br>💌 💌 💌SỚM CƯỚI NHAU ĐẺ CON ĐỂ MÌNH ĐƯỢC BẾ CHÁU NHÉ !!!💌 💌 💌</marquee>
+<div id="promise"></div></div> 
+<div class="sc"> <p id="a">You Will Always Bhie My Infinity And Clarity<p id="c">I Hope And Wishing For Our Love To be More True And Stronger As we Grow Old </p><p id="f">We Can Make All Our Dreams And Wishes Come True Together </p></div>
+<div id="gui"></div>		
+
+
+<canvas></canvas>
+<time></time>
+
+
+<script>
+
+    var t = 0;
+    var c = document.querySelector("canvas");     
+    var $ = c.getContext('2d');
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+    $.fillStyle = 'hsla(0,0%,0%,1)';
+
+    window.addEventListener('resize', function() {
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
+    }, false);
+
+    function draw() {
+      $.globalCompositeOperation = 'source-over';
+      $.fillStyle = 'hsla(0,0%,0%,.1)';
+      $.fillRect(0, 0, c.width, c.height);
+      var foo, i, j, r;
+      foo = Math.sin(t) * 2 * Math.PI;
+      for (i=0; i<400; ++i) {
+        r = 400 * Math.sin(i * foo);
+        $.globalCompositeOperation = '';
+        $.fillStyle = 'hsla(' + i + 12 + ',100%, 60%,1)';
+        $.beginPath();
+        $.arc(Math.sin(i) * r + (c.width / 2), 
+              Math.cos(i) * r + (c.height / 2), 
+              1.5, 0, Math.PI * 2);
+        $.fill();
+
+      }
+      t += 0.000005;
+      return t %= 2 * Math.PI;
+
+    };
+
+    function run() {
+      window.requestAnimationFrame(run);
+      draw();
+    }
+    run();
+</script>
+ <script src="main.js"></script>
+ <script src="main2.js"></script>
+ 
+
+</body>
+</html>
